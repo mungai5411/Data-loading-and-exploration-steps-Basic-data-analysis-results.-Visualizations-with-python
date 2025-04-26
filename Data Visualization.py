@@ -1,0 +1,26 @@
+plt.plot(data['time_column'], data['value_column'])
+plt.title('Trend Over Time')
+plt.xlabel('Time')
+plt.ylabel('Value')
+plt.show()
+
+data.groupby('category_column')['value_column'].mean().plot(kind='bar')
+plt.title('Comparison of Values by Category')
+plt.xlabel('Category')
+plt.ylabel('Average Value')
+plt.show()
+
+data['numerical_column'].plot(kind='hist', bins=30)
+plt.title('Distribution of Numerical Column')
+plt.xlabel('Value')
+plt.show()
+
+plt.scatter(data['numerical_column_1'], data['numerical_column_2'])
+plt.title('Scatter Plot: Numerical Column 1 vs Column 2')
+plt.xlabel('Column 1')
+plt.ylabel('Column 2')
+plt.show()
+
+sns.scatterplot(x='numerical_column_1', y='numerical_column_2', data=data, hue='category_column')
+plt.title('Enhanced Scatter Plot')
+plt.show()
